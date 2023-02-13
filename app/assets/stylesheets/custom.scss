@@ -1,7 +1,7 @@
 @import "bootstrap";
 
 .navbar {
-  background-color: coral !important;
+  background-color: #50bcff !important;
 }
 
 .nav-link {
@@ -20,4 +20,34 @@
 .btn-outline-success {
   border-color: white;
   color: white;
+}
+
+#home-container {
+  margin-top: 25px;
+}
+
+.custom-jumbotron {
+  background-image: url("writing.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: azure;
+}
+
+#page-content {
+  flex: 1 0 auto;
+  
+}
+
+#sticky-footer {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
 }
