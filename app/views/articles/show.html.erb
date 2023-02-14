@@ -1,8 +1,31 @@
-<h1>Showing article details</h1>
+<div class="container simple-bg">
+  <h2 class="text-center mt-4"><%= @article.title %></h2>
+    <div class="row justify-content-md-center">
+      <div class="col-8 mt-4">
+        <div class="card text-center shadow mb-5 bg-body-tertiary rounde">
+          <div class="card-header fst-italic">
+            by author's name
+          </div>
+          <div class="card-body">
+            <div class="card-text text-start"><%= simple_format(@article.description) %>
+            </div>
+            <div class="d-grid gap-2 d-md-block" >
+              <%= link_to "Edit", edit_article_path(@article), class: "btn btn-primary" %>
+              <%= link_to "Delete", article_path(@article), data: { "turbo-method": :delete }, onclick: "return confirm('Are you sure?')", class: "btn btn-outline-primary" %>
+            </div>   
+          </div>
+          <div class="card-footer text-muted">
+            <small>Created <%= time_ago_in_words(@article.created_at) %> ago,
+            edited <%= time_ago_in_words(@article.updated_at) %> ago</small>  
+          </div>
+        </div>
+          
+      </div>
+    </div>
+  </div>  
+  <div class="text-center mt-4">
+    <%= link_to "Return to articles listing", articles_path %>
+    <%= link_to "Add new article", new_article_path %>
+  </div>
+</div>
 
-<p><strong>Title: </strong><%= @article.title %></p>
-<p><strong>Description: </strong><%= @article.description %></p>
-<%= link_to "Edit", edit_article_path(@article) %> |
-<%= button_to "Delete", article_path(@article), method: :delete, onclick: "return confirm('Are you sure?')" %> | 
-<%# <%= link_to 'Delete', article_path(@article), data: { "turbo-method": :delete , "turbo-confirm": "Are you sure"} %> |  
-<%= link_to "Return to articles listing", articles_path %>
