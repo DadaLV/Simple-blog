@@ -14,9 +14,7 @@
             <div class="btn-group me-2" role="group" aria-label="First group">
             <%= link_to "View", article_path(article), class: "btn btn-primary btn-sm" %>
             <%= link_to "Edit", edit_article_path(article), class: "btn btn-primary btn-sm" %>
-            </div>
-            
-            
+            </div>   
           </div>
           <%= button_to "Delete", article_path(article), class: "mt-4 btn btn-outline-primary btn-sm", method: :delete , onclick: "return confirm('Are you sure?')" %>
         </div>
