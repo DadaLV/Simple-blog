@@ -1,5 +1,8 @@
 <h1 class="text-center mt-4">Simple bloggers</h1>
-<div class="container simple-bg">
+<div class="apple_pagination">
+    <%= will_paginate @users, :container => false %>
+  </div>
+<div class="container simple-bg page">
   <% @users.each do |user| %>
   <div class="row justify-content-md-center">
     <div class="col-8 mt-4">
@@ -22,9 +25,7 @@
     </div>
   </div>
   <% end %>
-  <div class="mb-3">
-  <div class="text-center mt-4">
-    <%= link_to "Add new article", new_article_path %>
-  </div>
+  <div class="apple_pagination">
+    <%= will_paginate @users, :container => false %>
   </div>  
 </div>
