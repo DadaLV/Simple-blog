@@ -15,8 +15,13 @@
           <p class="card-text"><%= pluralize(user.articles.count, "article") %></p>
           <div class="d-grid gap-2 d-md-block" >
             <%= link_to "View profile", user, class: "btn btn-primary" %>
-            <% if logged_in? && user == current_user %>
-              <%= link_to "Edit profile", edit_user_path(user), class: "btn btn-primary" %>
+            <% if logged_in? %>
+              <% if user == current_user %>
+                <%= link_to "Edit profile", edit_user_path(user), class: "btn btn-primary" %>
+              <% end %>
+              <% if current_user.admin? %>
+                <%= button_to "Delete user", user_path(user), method: :delete, onclick: "return confirm('Do you really want to delete this user?')", class: "btn btn-outline-primary" %>
+              <% end %>
             <% end %>
           </div>
         </div>
