@@ -34,7 +34,7 @@ class CategoriesController < ApplicationController
       flash[:notice] = "Category name updated successfully"
       redirect_to @category
     else
-      render "edit"
+      render 'edit'
     end
   end
 
